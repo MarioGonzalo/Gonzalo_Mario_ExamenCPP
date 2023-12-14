@@ -51,4 +51,12 @@ d) Una característica específica de C.
 
 #### Respuesta: b) Permiten la creación de funciones y clases genéricas, es decir, que pueden trabajar con cualquier tipo de datos.
 
+## Parte 2
+
+Los ejercicios de la parte dos se dividen en dos carpetas "EjercicioCPP" que se refiere al ejercicio escrito en el lenguaje C++ y "EjercicioC" que se refiere al ejercicio escrito en el lenguaje C, en cada 
+uno de ellos habrá comentarios indicando a qué parte del ejercicio pertenece cada bloque de código y qué hace cada uno.
+
+
+
+
 
