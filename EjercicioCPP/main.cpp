@@ -52,14 +52,34 @@ void eliminarMateria(Estudiante& estudiante, const string& materia) {
 void agregarAsistencia(Asistencia& asistencia) {
     cout << "Ingrese el dia: ";
     cin >> asistencia.dia;
+    if(asistencia.dia > 31 || asistencia.dia < 1){
+        throw runtime_error("El dia ingresado no es valido");
+    }
     cout << "Ingrese el mes: ";
     cin >> asistencia.mes;
+    if(asistencia.mes > 12 || asistencia.mes < 1){
+        throw runtime_error("El mes ingresado no es valido");
+    }
     cout << "Ingrese el año: ";
     cin >> asistencia.ano;
+    if(asistencia.ano < 2023){
+        throw runtime_error("El año ingresado no es valido");
+    }
     cout << "Ingrese la materia: ";
     cin >> asistencia.materia;
     cout << "Ingrese la asistencia (1: asistio, 0: no asistio): ";
     cin >> asistencia.asistio;
+}
+
+// Se crea un void para mostrar la asistencia
+void mostrarAsistencia(const Asistencia& asistencia, const Estudiante& estudiante) {
+    cout << "El dia " << asistencia.dia << "/" << asistencia.mes << "/" << asistencia.ano;
+    cout << " el alumno "<< estudiante.nombre << " convocado a clase de " << asistencia.materia;
+    if(asistencia.asistio == 1){
+        cout << " asistio" << endl;
+} else {
+    cout << " no asistio" << endl;
+}
 }
 // Fin parte 3: Gestión de asistencias
 int main() {
@@ -69,6 +89,12 @@ int main() {
     estudiante.promedio = 10;
 
     agregarMateria(estudiante, "Matematicas");
+
+    Asistencia asistencia;
+
+    agregarAsistencia(asistencia);
+
+    mostrarAsistencia(asistencia, estudiante);
 
     mostrarEstudiante(estudiante);
 
