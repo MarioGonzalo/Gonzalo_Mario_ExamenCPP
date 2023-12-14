@@ -36,12 +36,20 @@ void mostrarEstudiante(const Estudiante& estudiante) {
 // Se crea un void para agregar materias al vector de materias del estudiante
 void agregarMateria(Estudiante& estudiante, const string& materia) {
     estudiante.materias.push_back(materia);
+    if (estudiante.materias.size() > 10) {
+        throw runtime_error("El estudiante no puede tener mas de 10 materias");
+    }
+    if(materia == " "){
+        throw runtime_error("La materia no puede estar vacia");
+    }
 }
 void eliminarMateria(Estudiante& estudiante, const string& materia) {
     for (int i = 0; i < estudiante.materias.size(); ++i) {
         if (estudiante.materias[i] == materia) {
             estudiante.materias.erase(estudiante.materias.begin() + i);
             break;
+        } else {
+            throw runtime_error("La materia no existe");
         }
     }
 }
@@ -83,6 +91,7 @@ void mostrarAsistencia(const Asistencia& asistencia, const Estudiante& estudiant
 }
 // Fin parte 3: Gestión de asistencias
 int main() {
+
     Estudiante estudiante;
     strcpy(estudiante.nombre, "Juan");
     estudiante.edad = 20;
@@ -97,6 +106,24 @@ int main() {
     mostrarAsistencia(asistencia, estudiante);
 
     mostrarEstudiante(estudiante);
+
+    try {
+        agregarAsistencia(asistencia);
+    } catch (const runtime_error& e) {
+        cout << e.what() << endl;
+    }
+
+    try {
+        agregarMateria(estudiante, " ");
+    } catch (const runtime_error& e) {
+        cout << e.what() << endl;
+    }
+
+    try {
+        eliminarMateria(estudiante, "Matematicas");
+    } catch (const runtime_error& e) {
+        cout << e.what() << endl;
+    }
 
     return 0;
 }
