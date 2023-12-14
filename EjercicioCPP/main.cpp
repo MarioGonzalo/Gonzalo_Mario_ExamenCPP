@@ -12,11 +12,7 @@ struct Estudiante{
 };
 
 // Se crea una función llamada mostrarEstudiante que muestra los datos del estudiante
-void mostrarEstudiante(){
-    Estudiante estudiante;
-    strcpy(estudiante.nombre, "Juan");
-    estudiante.edad = 20;
-    estudiante.promedio = 10;
+void mostrarEstudiante(Estudiante estudiante){
     cout << "Nombre: " << estudiante.nombre << endl;
     cout << "Edad: " << estudiante.edad << endl;
     cout << "Promedio: " << estudiante.promedio << endl;
@@ -24,5 +20,9 @@ void mostrarEstudiante(){
 // Fin parte 1: Estructura del estudiante
 
 int main() {
-    mostrarEstudiante();
+    Estudiante estudiante;
+    strcpy(estudiante.nombre, "Juan");
+    estudiante.edad = 20;
+    estudiante.promedio = 10;
+    mostrarEstudiante(estudiante);
 }
