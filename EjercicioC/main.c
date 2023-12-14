@@ -1,25 +1,46 @@
 #include <stdio.h>
 #include <string.h>
 
+
 // Inicio parte 1: Estructura del estudiante
-// Se crea una estructura llamada Estudiante donde se almacena el nombre, edad y promedio de un estudiante
-struct Estudiante{
-    char nombre [50];
+// Se crea la estructura Estudiante
+struct Estudiante {
+    char nombre[50];
     int edad;
-    int promedio;
+    float promedio;
+    char materias[10][50];
+    int numMaterias;
 };
 
-// Se crea una función llamada mostrarEstudiante que muestra los datos del estudiante
-void mostrarEstudiante(struct Estudiante estudiante){
-    printf("Nombre: %s\n", estudiante.nombre);
-    printf("Edad: %d\n", estudiante.edad);
-    printf("Promedio: %d\n", estudiante.promedio);
+// Function to display student information
+void mostrarEstudiante(const struct Estudiante *estudiante) {
+    printf("Nombre: %s\n", estudiante->nombre);
+    printf("Edad: %d\n", estudiante->edad);
+    printf("Promedio: %.2f\n", estudiante->promedio);
+    printf("Materias: ");
+    for (int i = 0; i < estudiante->numMaterias; ++i) {
+        printf("%s ", estudiante->materias[i]);
+    }
+    printf("\n");
 }
 // Fin parte 1: Estructura del estudiante
+// Inicio parte 2: Gestión de materias
+void agregarMateria(struct Estudiante *estudiante, const char *materia) {
+    strcpy(estudiante->materias[estudiante->numMaterias], materia);
+    estudiante->numMaterias++;
+}
+// Fin parte 2: Gestión de materias
+
 int main() {
     struct Estudiante estudiante;
     strcpy(estudiante.nombre, "Juan");
     estudiante.edad = 20;
-    estudiante.promedio = 10;
-    mostrarEstudiante(estudiante);
+    estudiante.promedio = 10.0;
+    estudiante.numMaterias = 0;
+
+    agregarMateria(&estudiante, "Matematicas");
+
+    mostrarEstudiante(&estudiante);
+
+    return 0;
 }
