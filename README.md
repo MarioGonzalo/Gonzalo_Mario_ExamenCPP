@@ -56,6 +56,11 @@ d) Una característica específica de C.
 Los ejercicios de la parte dos se dividen en dos carpetas "EjercicioCPP" que se refiere al ejercicio escrito en el lenguaje C++ y "EjercicioC" que se refiere al ejercicio escrito en el lenguaje C, en cada 
 uno de ellos habrá comentarios indicando a qué parte del ejercicio pertenece cada bloque de código y qué hace cada uno.
 
+### Discusión de diferencias parte 1: Estructura del estudiante
+En esta primera parte del código las diferencias entre el lenguaje C y C++ no son más que las propias de los lenguajes de programación, es decir, que C emplea printf mientras que C++ std::cout
+
+
+
 
 
 
