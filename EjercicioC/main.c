@@ -12,6 +12,15 @@ struct Estudiante {
     int numMaterias;
 };
 
+// Se crea la estructura Asistencia
+struct Asistencia {
+    int dia;
+    int mes;
+    int ano;
+    int asistio;
+    char materia[50];
+};
+
 // Function to display student information
 void mostrarEstudiante(const struct Estudiante *estudiante) {
     printf("Nombre: %s\n", estudiante->nombre);
@@ -43,6 +52,27 @@ void eliminarMateria(struct Estudiante *estudiante, const char *materia) {
 }
 // Fin parte 2: Gestión de materias
 
+// Inicio parte 3: Gestión de asistencias
+// Se crea un void para especificar la asistencia
+void agregarAsistencia(struct Asistencia *asistencia) {
+    printf("Ingrese el dia: ");
+    scanf("%d", &asistencia->dia);
+    printf("Ingrese el mes: ");
+    scanf("%d", &asistencia->mes);
+    printf("Ingrese el ano: ");
+    scanf("%d", &asistencia->ano);
+    printf("Ingrese si asistio (1) o no asistio (0): ");
+    scanf("%d", &asistencia->asistio);
+    printf("Ingrese la materia: ");
+    scanf("%s", asistencia->materia);
+}
+void mostrarAsistencia(const struct Asistencia *asistencia) {
+    printf("Fecha: %d/%d/%d\n", asistencia->dia, asistencia->mes, asistencia->ano);
+    printf("Asistio: %s\n", asistencia->asistio ? "Si" : "No");
+    printf("Materia: %s\n", asistencia->materia);
+}
+// Fin parte 3: Gestión de asistencias
+
 int main() {
     struct Estudiante estudiante;
     strcpy(estudiante.nombre, "Juan");
@@ -52,6 +82,11 @@ int main() {
 
     agregarMateria(&estudiante, "Matematicas");
 
+    struct Asistencia asistencia;
+
+    agregarAsistencia(&asistencia);
+
+    mostrarAsistencia(&asistencia);
     mostrarEstudiante(&estudiante);
 
     return 0;
