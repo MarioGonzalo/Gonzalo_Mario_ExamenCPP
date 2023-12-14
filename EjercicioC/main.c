@@ -57,10 +57,22 @@ void eliminarMateria(struct Estudiante *estudiante, const char *materia) {
 void agregarAsistencia(struct Asistencia *asistencia) {
     printf("Ingrese el dia: ");
     scanf("%d", &asistencia->dia);
+    if (asistencia->dia < 1 || asistencia->dia > 31) {
+        printf("El dia debe estar entre 1 y 31\n");
+        return;
+    }
     printf("Ingrese el mes: ");
     scanf("%d", &asistencia->mes);
-    printf("Ingrese el ano: ");
+    if (asistencia->mes < 1 || asistencia->mes > 12) {
+        printf("El mes debe estar entre 1 y 12\n");
+        return;
+    }
+    printf("Ingrese el año: ");
     scanf("%d", &asistencia->ano);
+    if (asistencia->ano < 2023) {
+        printf("El año debe ser menor a 2023\n");
+        return;
+    }
     printf("Ingrese si asistio (1) o no asistio (0): ");
     scanf("%d", &asistencia->asistio);
     printf("Ingrese la materia: ");
