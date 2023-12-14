@@ -10,16 +10,16 @@ struct Estudiante{
 };
 
 // Se crea una función llamada mostrarEstudiante que muestra los datos del estudiante
-void mostrarEstudiante(){
-    struct Estudiante estudiante;
-    strcpy(estudiante.nombre, "Juan");
-    estudiante.edad = 20;
-    estudiante.promedio = 10;
+void mostrarEstudiante(struct Estudiante estudiante){
     printf("Nombre: %s\n", estudiante.nombre);
     printf("Edad: %d\n", estudiante.edad);
     printf("Promedio: %d\n", estudiante.promedio);
 }
 // Fin parte 1: Estructura del estudiante
 int main() {
-    mostrarEstudiante();
+    struct Estudiante estudiante;
+    strcpy(estudiante.nombre, "Juan");
+    estudiante.edad = 20;
+    estudiante.promedio = 10;
+    mostrarEstudiante(estudiante);
 }
