@@ -78,10 +78,11 @@ void agregarAsistencia(struct Asistencia *asistencia) {
     printf("Ingrese la materia: ");
     scanf("%s", asistencia->materia);
 }
-void mostrarAsistencia(const struct Asistencia *asistencia) {
-    printf("Fecha: %d/%d/%d\n", asistencia->dia, asistencia->mes, asistencia->ano);
-    printf("Asistio: %s\n", asistencia->asistio ? "Si" : "No");
-    printf("Materia: %s\n", asistencia->materia);
+void mostrarAsistencia(const struct Asistencia *asistencia, const struct Estudiante *estudiante) {
+    printf("El día %d/%d/%d", asistencia->dia, asistencia->mes, asistencia->ano);
+    printf(" el estudiante %s", estudiante->nombre);
+    printf( asistencia->asistio ? " asistió " : " no asistió ");
+    printf(" a clase de %s\n", asistencia->materia);
 }
 // Fin parte 3: Gestión de asistencias
 
@@ -98,7 +99,7 @@ int main() {
 
     agregarAsistencia(&asistencia);
 
-    mostrarAsistencia(&asistencia);
+    mostrarAsistencia(&asistencia, &estudiante);
     mostrarEstudiante(&estudiante);
 
     return 0;
