@@ -29,6 +29,18 @@ void agregarMateria(struct Estudiante *estudiante, const char *materia) {
     strcpy(estudiante->materias[estudiante->numMaterias], materia);
     estudiante->numMaterias++;
 }
+
+void eliminarMateria(struct Estudiante *estudiante, const char *materia) {
+    for (int i = 0; i < estudiante->numMaterias; ++i) {
+        if (strcmp(estudiante->materias[i], materia) == 0) {
+            for (int j = i; j < estudiante->numMaterias - 1; ++j) {
+                strcpy(estudiante->materias[j], estudiante->materias[j + 1]);
+            }
+            estudiante->numMaterias--;
+            break;
+        }
+    }
+}
 // Fin parte 2: Gestión de materias
 
 int main() {
