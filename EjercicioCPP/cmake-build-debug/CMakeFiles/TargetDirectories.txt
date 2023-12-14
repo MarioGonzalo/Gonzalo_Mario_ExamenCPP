@@ -1,3 +1,0 @@
-C:/Users/magol/CLionProjects/ExamenT2/EjercicioCPP/cmake-build-debug/CMakeFiles/EjercicioCPP.dir
-C:/Users/magol/CLionProjects/ExamenT2/EjercicioCPP/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/magol/CLionProjects/ExamenT2/EjercicioCPP/cmake-build-debug/CMakeFiles/rebuild_cache.dir
